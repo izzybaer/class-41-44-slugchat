@@ -1,7 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import * as route from '../../action/route.js';
 import * as querystring from 'querystring';
+import * as route from '../../action/route.js';
 
 class LandingContainer extends React.Component{
   render(){
@@ -13,7 +13,7 @@ class LandingContainer extends React.Component{
       scope: 'openid profile email',
       prompt: __DEBUG__ ? 'consent' : undefined,
     });
-    
+
     let googleLoginURL = `${googleLoginBaseURL}?${googleLoginQuery}`;
     return(
       <div className='landing-container'>

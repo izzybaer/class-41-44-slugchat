@@ -1,10 +1,10 @@
 import React from 'react';
 import * as _ from 'lodash';
+import validator from 'validator';
 import {connect} from 'react-redux';
 import superagent from 'superagent';
 import * as util from '../../lib/util.js';
 import * as auth from '../../action/auth.js';
-import validator from 'validator';
 
 const Tooltip = (props) => {
   return (
@@ -42,7 +42,6 @@ class SignupContainer extends React.Component {
   handleSubmit(e){
     e.preventDefault();
     if(!this.state.usernameError && !this.state.emailError && !this.state.passwordError){
-      console.log('wat');
       return this.props.signup({
         email: this.state.email,
         username: this.state.username,
