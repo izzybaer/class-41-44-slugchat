@@ -5,6 +5,7 @@ import * as auth from '../../action/auth.js';
 import * as route from '../../action/route.js';
 import {MemoryRouter, Switch, Route} from 'react-router-dom';
 
+import ChatContainer from '../chat-container';
 import SignupContainer from '../signup-container';
 import LandingContainer from '../landing-container';
 
@@ -42,7 +43,7 @@ class App extends React.Component{
         <MemoryRouter>
           <Switch location={{pathname: this.props.route}}>
             <Route path='/landing' component={LandingContainer} />
-            <Route path='/chat' component={() => <p> chat </p>} />
+            <Route path='/chat' component={ChatContainer} />
             <Route path='/signup' component={SignupContainer} />
             <Route path='/login' component={() => <p> login </p>} />
             <Route path='/settings' component={() => <p> settings </p>} />

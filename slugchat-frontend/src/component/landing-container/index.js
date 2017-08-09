@@ -3,7 +3,7 @@ import {connect} from 'react-redux';
 import * as querystring from 'querystring';
 import * as route from '../../action/route.js';
 
-class LandingContainer extends React.Component{
+export class LandingContainer extends React.Component{
   render(){
     let googleLoginBaseURL='https://accounts.google.com/o/oauth2/v2/auth';
     let googleLoginQuery = querystring.stringify({
@@ -25,9 +25,9 @@ class LandingContainer extends React.Component{
   }
 }
 
-let mapStateToProps = (state) => ({});
+export const mapStateToProps = (state) => ({});
 
-let mapDispatchToProps = (dispatch) => ({
+export const mapDispatchToProps = (dispatch) => ({
   goToLogin: () => dispatch(route.switchRoute('/login')),
   goToSignup: () => dispatch(route.switchRoute('/signup')),
 });
